@@ -1,31 +1,65 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Logo from "../Logo";
 import Link from "next/link";
-import { FaUser } from "react-icons/fa";
-import { MdClose } from "react-icons/md";
-import { RiMenu3Fill } from "react-icons/ri";
 import Hero_blackLogo from "../Hero_blackLogo";
 import { useSelector } from "react-redux";
-import { setScrolling, setOpen, setTest } from "@/redux/HeaderSlice";
+import {
+  setScrolling,
+  setOpen,
+  setTest,
+} from "@/redux/HeaderSlice";
 import { RootState, useAppDispatch } from "@/redux/store";
+import Button from "./Button";
+import { usePathname } from "next/navigation";
+import MobileMenu from "./MobileMenu";
 
 interface Menu {
   id: string;
   label: string;
+  submenu?: Menu[];
 }
 
 const menus: Menu[] = [
   { id: "/", label: "Home" },
-  { id: "#about", label: "About Us" },
-  { id: "#service", label: "Service" },
-  { id: "#project", label: "Project" },
-  { id: "#pricing", label: "Pricing" },
+  { id: "/about", label: "About Us" },
+  { id: "/service", label: "Service" },
+  { id: "/pricing", label: "Pricing" },
+  {
+    id: "#",
+    label: "All Pages",
+    submenu: [
+      { id: "/about", label: "About Us" },
+      { id: "/service", label: "Service" },
+      { id: "/pricing", label: "Pricing" },
+      { id: "/mission", label: "Mission" },
+      { id: "/faq", label: "FAQ" },
+      { id: "/contact", label: "Contact" },
+      { id: "/careers", label: "Career" },
+      { id: "/track", label: "Track" },
+    ],
+  },
 ];
 
+const mobileMenus: Menu[] = [
+  { id: "/", label: "Home" },
+  { id: "/about", label: "About Us" },
+  { id: "/service", label: "Services" },
+  { id: "/pricing", label: "Pricing" },
+  { id: "/mission", label: "Mission" },
+  { id: "/faq", label: "FAQ" },
+  { id: "/contact", label: "Contact" },
+  { id: "/careers", label: "Career" },
+  { id: "/track", label: "Track" },
+];
+
+
 export default function Header() {
+  const pathname = usePathname();
   const dispatch = useAppDispatch();
-  const {scrolling, test, open} = useSelector((state:RootState) => state.header)
+  const { scrolling, test, open } = useSelector(
+    (state: RootState) => state.header
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,29 +92,42 @@ export default function Header() {
           </Link>
           <div className="gap-10 justify-center items-center hidden lg:flex">
             {menus.map((menu) => (
-              <Link key={menu.id} href={menu.id} className="text-white font-medium">
-                {menu.label}
-              </Link>
+              <div key={menu.label} className="relative group">
+                <Link
+                  href={menu.id}
+                  className={`font-medium font-Euclid xl:px-3 py-2 ${
+                    pathname === menu.id ? "text-yellow-500" : "text-white"
+                  } hover:text-yellow-500`}
+                >
+                  {menu.label}
+                </Link>
+                {menu.submenu && (
+                  <div className="absolute w-[400px] grid grid-cols-3 top-full left-0 mt-7 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                    {menu.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.id}
+                        href={subItem.id}
+                        className="block px-5 py-2 text-black hover:text-yellow-500 font-Euclid"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            {/*login button*/}
-            <div
-              className={`relative flex items-center gap-2 md:px-5 px-3 py-2 overflow-hidden group ${
-                test ? "border border-black" : "border border-gray-800"}`}>
-              <FaUser
-                className={`md:text-[15px] text-[10px] relative z-10 group-hover:text-black transition-colors duration-500 ${
-                  test ? "text-balck" : "text-yellow-500"}`} />
-              <Link
-                href=""
-                className={`font-roboto font-medium md:text-[15px] text-[10px] relative z-10 group-hover:text-black transition-colors duration-500
-                ${test ? "text-black" : "text-white"}`}
-              >
-                Login
-              </Link>
-              <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"></span>
-            </div>
+          <div className="lg:flex items-center gap-4 md:mt-0 mt-2 hidden">
+            <Button test={test} />
           </div>
+
+          <MobileMenu
+            open={open}
+            setOpen={setOpen}
+            mobileMenus={mobileMenus}
+            test={test}
+            dispatch={dispatch}
+          />
         </div>
       </div>
 
@@ -98,62 +145,42 @@ export default function Header() {
           </Link>
           <div className="gap-10 justify-center items-center hidden lg:flex">
             {menus.map((menu) => (
-              <Link key={menu.id} href={menu.id} className="text-black font-medium">
-                {menu.label}
-              </Link>
+              <div key={menu.label} className="relative group">
+                <Link
+                  href={menu.id}
+                  className={`font-medium font-Euclid xl:px-3 py-2 ${
+                    pathname === menu.id ? "text-yellow-500" : "text-black"
+                  } hover:text-yellow-500`}
+                >
+                  {menu.label}
+                </Link>
+                {menu.submenu && (
+                  <div className="absolute w-[400px] grid grid-cols-3 top-full left-0 mt-7 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-50">
+                    {menu.submenu.map((subItem) => (
+                      <Link
+                        key={subItem.id}
+                        href={subItem.id}
+                        className="block px-5 py-2 text-black hover:text-yellow-500 font-Euclid"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
           </div>
-          <div className="flex items-center gap-4">
-            {/*login button*/}
-            <div
-              className={`relative flex items-center gap-2 md:px-5 px-3 py-2 overflow-hidden group ${
-                test ? "border border-black" : "border border-gray-800"
-              }`}
-            >
-              <FaUser
-                className={`md:text-[15px] text-[10px] relative z-10 group-hover:text-white transition-colors duration-500 ${
-                  test ? "text-balck" : "text-yellow-500"
-                }`}
-              />
-              <Link
-                href=""
-                className={`font-roboto font-medium md:text-[15px] text-[10px] relative z-10 group-hover:text-white transition-colors duration-500
-                ${test ? "text-black" : "text-white"}`}
-              >
-                Login
-              </Link>
-              <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-in-out"></span>
-            </div>
-            <div className="lg:hidden relative z-10">
-            {open ? (
-              <MdClose
-                className="md:text-[40px] text-[30px] text-black"
-                onClick={() => dispatch(setOpen(false))}
-              />
-            ) : (
-              <RiMenu3Fill
-                className="md:text-[40px] text-[30px] text-black"
-                onClick={() => dispatch(setOpen(true))}
-              />
-            )}
-            {open && (
-              <div
-                className="flex justify-start items-start flex-col text-end gap-4 bg-white p-[2rem] 
-                absolute md:top-[40px] top-[30px] right-0 mt-[1rem] md:min-w-[690px] min-w-[300px] rounded-[5px] scale-up-center animate-slide-down"
-              >
-                {menus.map((menu) => (
-                  <Link
-                    key={menu.id}
-                    href={menu.id}
-                    className="font-roboto font-medium"
-                  >
-                    {menu.label}
-                  </Link>
-                ))}
-              </div>
-            )}
+          {/*login button*/}
+          <div className="lg:flex items-center gap-4 md:mt-0 mt-2 hidden">
+            <Button test={test} />
           </div>
-          </div>
+          <MobileMenu
+            open={open}
+            setOpen={setOpen}
+            mobileMenus={mobileMenus}
+            test={test}
+            dispatch={dispatch}
+          />
         </div>
       </div>
     </header>
