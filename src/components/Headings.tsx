@@ -25,7 +25,7 @@ export default function Headings({title, desc, width } : SubtitleProps) {
             </div>
         ): (
         headings.map(({title, desc}, i) => (
-            <div>
+            <div key={i}>
             <h2 className='bg-gray-300 px-3 py-2 font-roboto font-medium uppercase rounded-md w-36'>{title}</h2>
             <p className='font-roboto font-bold text-[40px] xl:w-[60%]'>{desc}</p>
             </div>

@@ -5,6 +5,7 @@ import IconGlobal from "../IconGlobal";
 import IconSwatc from "../IconSwatc";
 import IconBitcoin from "../IconBitcoin";
 import { JSX } from 'react';
+import Image from 'next/image';
 
 interface Solution {
   image: JSX.Element;
@@ -85,7 +86,7 @@ export default function SolutionItems() {
           <p className="font-Poppins font-medium md:text-[18px] text-[15px] text-[#656565]">
             {desc}
           </p>
-          <img
+          <Image
             src={img}
             alt="solution_image"
             className={`w-[600%] ${top} ${bottom}`}

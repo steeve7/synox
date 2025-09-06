@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 export default function AboutVideo() {
   return (
@@ -10,7 +11,7 @@ export default function AboutVideo() {
         <h3 className="font-Euclid font-bold md:text-[50px] text-[20px] text-[#1c1c1e]">
           Physical Card for Your Pocket
         </h3>
-        <img
+        <Image
           src="/images/about_video_image_1.webp"
           alt="image_video"
           className="rounded-2xl"

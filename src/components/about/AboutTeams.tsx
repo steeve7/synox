@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 export default function AboutTeams() {
   return (
@@ -6,17 +7,17 @@ export default function AboutTeams() {
       <div className="flex flex-col lg:w-1/2 w-full justify-center items-center gap-4">
         {/*first two image*/}
         <div className="flex flex-row justify-center items-center gap-4">
-          <img
+          <Image
             src="/images/about_image_1.webp"
             alt="about_image"
             className="md:w-48 w-36 rounded-xl mt-16"
           />
-          <img
+          <Image
             src="/images/about_image_2.webp"
             alt="about_image"
             className="md:w-48 w-36 rounded-xl "
           />
-          <img
+          <Image
             src="/images/about_image_3.webp"
             alt="about_image"
             className="md:w-48 w-36 mt-16 rounded-xl lg:hidden md:flex hidden"
@@ -24,17 +25,17 @@ export default function AboutTeams() {
         </div>
         {/*second three image*/}
         <div className="flex flex-row lg:ml-[13rem] md:-ml-3 ml-[10rem] md:-mt-5">
-          <img
+          <Image
             src="/images/avatar_image_4.webp"
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white"
           />
-          <img
+          <Image
             src="/images/avatar_image_5.webp"
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white -ml-4"
           />
-          <img
+          <Image
             src="/images/avatar_image_6.webp"
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white -ml-4"
@@ -44,7 +45,7 @@ export default function AboutTeams() {
           </p>
         </div>
         {/*last image*/}
-        <img
+        <Image
           src="/images/about_image_3.webp"
           alt="about_image"
           className="md:w-48 w-36 rounded-xl lg:flex md:hidden flex"

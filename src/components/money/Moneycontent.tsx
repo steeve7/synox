@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../HomeLayout/Button';
+import Image from 'next/image';
 
 
 interface Money {
@@ -40,7 +41,7 @@ export default function Moneycontent() {
             <span className="text-white font-medium font-Euclid text-[20px]">
               {moni.number}
             </span>
-            <img src={moni.image} alt="withdraw options" className="w-14" />
+            <Image src={moni.image} alt="withdraw options" className="w-14" />
             <p className="text-white font-bol font-Euclid text-[20px]">
               {moni.title}
             </p>

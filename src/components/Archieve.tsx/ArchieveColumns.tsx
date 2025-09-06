@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 export default function ArchieveColumns() {
   return (
@@ -8,7 +9,7 @@ export default function ArchieveColumns() {
         <div className="flex flex-col gap-10">
           <div className="relative flex items-center justify-center py-10 px-5 lg:h-[250px] md:h-[150px] xl:w-[360px] lg:w-[300px] w-full rounded-2xl shadow-xl overflow-hidden">
             {/* Background Image */}
-            <img
+            <Image
               src="/images/funfact_bg_1.svg"
               alt="card background"
               className="absolute inset-0 w-full h-full object-cover"
@@ -28,7 +29,7 @@ export default function ArchieveColumns() {
 
           <div className="relative flex items-center justify-center py-10 px-5 lg:h-[250px] md:h-[150px] xl:w-[360px] lg:w-[300px] w-full rounded-2xl shadow-xl overflow-hidden">
             {/* Background Image */}
-            <img
+            <Image
               src="/images/funfact_bg_2.svg"
               alt="card background"
               className="absolute inset-0 w-full h-full object-cover"
@@ -50,7 +51,7 @@ export default function ArchieveColumns() {
         {/* Center Image Section */}
         <div className="relative flex flex-col justify-start items-center bg-black xl:mx-5 px-5 xl:h-[500px] lg:h-[450px] md:h-[700px] h-[400px] w-full rounded-2xl shadow-xl overflow-hidden">
           {/* Shape image as background */}
-          <img
+          <Image
             src="/images/shape_line.svg"
             alt="shape"
             className="absolute inset-0 w-full h-full object-contain"
@@ -59,7 +60,7 @@ export default function ArchieveColumns() {
           {/* Card image + button stacked on top */}
           <div className="relative flex flex-col items-center py-5">
             {/* Card image */}
-            <img
+            <Image
               src="/images/transactions_card_image.webp"
               alt="arch_image"
               className="xl:w-[300px] lg:w-[250px] md:w-[700px] w-[550px] h-auto rounded-xl shadow-lg"
@@ -76,7 +77,7 @@ export default function ArchieveColumns() {
         <div className="flex flex-col gap-10">
           <div className="relative flex items-center justify-center py-10 px-5 lg:h-[250px] md:h-[150px] xl:w-[360px] lg:w-[300px] w-full rounded-2xl shadow-xl overflow-hidden">
             {/* Background Image */}
-            <img
+            <Image
               src="/images/funfact_bg_3.svg"
               alt="card background"
               className="absolute inset-0 w-full h-full object-cover"
@@ -95,7 +96,7 @@ export default function ArchieveColumns() {
           </div>
           <div className="relative flex items-center justify-center py-10 px-5 lg:h-[250px] md:h-[150px] xl:w-[360px] lg:w-[300px] w-full rounded-2xl shadow-xl overflow-hidden">
             {/* Background Image */}
-            <img
+            <Image
               src="/images/funfact_bg_4.svg"
               alt="card background"
               className="absolute inset-0 w-full h-full object-cover"

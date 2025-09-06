@@ -14,9 +14,9 @@ export default function ArchieveContent() {
         </div>
         <div className="xl:w-1/2 lg:w-[40%]">
           <p className="font-Poppins font-medium text-[#656565] text-[18px] xl:w-[80%] w-full">
-            With our comprehensive banking solution, you'll find that one card
-            is truly enough. Our all-in-one card combines the functionality of
-            multiple cards into a single, convenient solution, clutter and
+            With our comprehensive banking solution, you&apos;ll find that one
+            card is truly enough. Our all-in-one card combines the functionality
+            of multiple cards into a single, convenient solution, clutter and
             simplifying your wallet.
           </p>
         </div>

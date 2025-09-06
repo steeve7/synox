@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { motion } from "framer-motion";
 import Hero_shape from '../Hero_shape';
+import Image from 'next/image';
 
 interface company {
   image: string;
@@ -89,7 +90,7 @@ export default function HeroShapes() {
                       >
                         <ul className="border border-gray-800 p-5 rounded-full xl:w-52 lg:w-60 md:w-48 w-40">
                           <li className="text-white text-center text-[30px] flex items-center justify-center">
-                            <img
+                            <Image
                               src={image}
                               alt="image_logo"
                               className={`${image_size}`}

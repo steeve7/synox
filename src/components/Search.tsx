@@ -1,5 +1,6 @@
 'use client'
 import React, {useState} from 'react'
+import Image from 'next/image';
 
 interface SearchResult {
     id: string;
@@ -60,7 +61,7 @@ const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
             <h3>{item.name}</h3>
             {item.desc && <p>{item.desc}</p>}
             {item.image && (
-              <img
+              <Image
                 src={item.image}
                 alt={item.name}
                 className="w-20 h-20 rounded"
