@@ -37,7 +37,7 @@ const headerSlice = createSlice({
 });
 
 //export the actions
-export const { setScrolling, setOpen, setTest, setOpenScrolledMenu } =
+export const { setScrolling, setOpen, setTest, setOpenScrolledMenu} =
   headerSlice.actions;
 
 //export the reducers

@@ -1,13 +1,16 @@
 import React from 'react'
 import Link from "next/link";
 import { FaUser } from "react-icons/fa";
+import { useSelector} from 'react-redux';
+import { RootState } from "@/redux/store";
 
 interface Prop {
-  test: boolean;
-  variant: "white" | "transparent";
+  variant: "white" | "transparent"
 }
 
-export default function Button({test, variant} : Prop) {
+export default function Button({variant}: Prop) {
+  const test = useSelector((state: RootState) => state.header.test);
+
   return (
     <div className="flex items-center gap-4">
       {/*login button*/}

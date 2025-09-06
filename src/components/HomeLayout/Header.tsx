@@ -8,7 +8,7 @@ import {
   setScrolling,
   setOpen,
   setTest,
-  setOpenScrolledMenu
+  setOpenScrolledMenu,
 } from "@/redux/HeaderSlice";
 import { RootState, useAppDispatch } from "@/redux/store";
 import Button from "./Button";
@@ -53,13 +53,11 @@ export default function Header() {
           </Link>
           <Menu variant="white"/>
           <div className="lg:flex items-center gap-4 md:mt-0 mt-2 hidden">
-            <Button test={test} variant="transparent" />
+            <Button variant="transparent"/>
           </div>
 
           <MobileMenu
-            open={open}
             setOpen={setOpen}
-            test={test}
             dispatch={dispatch}
             variant="white"
           />
@@ -81,12 +79,10 @@ export default function Header() {
           <Menu variant="transparent"/>
           {/*login button*/}
           <div className="lg:flex items-center gap-4 md:mt-0 mt-2 hidden">
-            <Button test={test} variant="white" />
+            <Button variant="white"/>
           </div>
           <MobileMenu
-            open={open}
             setOpen={setOpen}
-            test={test}
             dispatch={dispatch}
             variant="transparent"
           />

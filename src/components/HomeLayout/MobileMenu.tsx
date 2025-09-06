@@ -3,9 +3,9 @@ import Button from './Button';
 import Link from "next/link";
 import { MdClose } from "react-icons/md";
 import { RiMenu3Fill } from "react-icons/ri";
-import { AppDispatch } from '@/redux/store';
+import { AppDispatch, RootState } from '@/redux/store';
 import { setOpen } from '@/redux/HeaderSlice';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface Menu {
   id: string;
@@ -25,15 +25,14 @@ const mobileMenus: Menu[] = [
 ];
 
 interface Props {
-  open: boolean;
   setOpen: typeof setOpen; // action creator from slice
-  test: boolean;
   dispatch: AppDispatch; //  no need for AnyAction
   variant: "white" | "transparent";
 }
 
-export default function MobileMenu({open, test, variant, dispatch}: Props) {
+export default function MobileMenu({ variant, dispatch}: Props) {
     // const dispatch = useDispatch<AppDispatch>();
+    const open = useSelector((state: RootState) => state.header.open)
     
   return (
     <div className="lg:hidden relative z-10 md:mt-0 mt-2">
@@ -66,7 +65,7 @@ export default function MobileMenu({open, test, variant, dispatch}: Props) {
               {menu.label}
             </Link>
           ))}
-          <Button test={test} variant="white" />
+          <Button variant="white" />
         </div>
       )}
     </div>
