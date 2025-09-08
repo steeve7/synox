@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image';
+import AboutVideoOne from "../../../public/Images/about_video_image_1.webp";
 
 export default function AboutVideo() {
   return (
@@ -12,7 +13,7 @@ export default function AboutVideo() {
           Physical Card for Your Pocket
         </h3>
         <Image
-          src="/images/about_video_image_1.webp"
+          src={AboutVideoOne}
           alt="image_video"
           className="rounded-2xl"
         />

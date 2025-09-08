@@ -94,6 +94,8 @@ export default function HeroShapes() {
                               src={image}
                               alt="image_logo"
                               className={`${image_size}`}
+                              width="28"
+                              height="15"
                             />
                           </li>
                         </ul>

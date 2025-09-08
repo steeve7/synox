@@ -90,6 +90,8 @@ export default function SolutionItems() {
             src={img}
             alt="solution_image"
             className={`w-[600%] ${top} ${bottom}`}
+            width="60"
+            height="10"
           />
         </div>
       ))}

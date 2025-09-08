@@ -1,5 +1,12 @@
 import React from 'react'
 import Image from 'next/image';
+import AboutOne from "../../../public/Images/about_image_1.webp";
+import AboutTwo from "../../../public/Images/about_image_2.webp";
+import AboutThree from "../../../public/Images/about_image_3.webp";
+import Aboutfour from "../../../public/Images/avatar_image_4.webp";
+import Aboutfive from "../../../public/Images/avatar_image_5.webp";
+import Aboutsix from "../../../public/Images/avatar_image_6.webp";
+
 
 export default function AboutTeams() {
   return (
@@ -8,17 +15,17 @@ export default function AboutTeams() {
         {/*first two image*/}
         <div className="flex flex-row justify-center items-center gap-4">
           <Image
-            src="/images/about_image_1.webp"
+            src={AboutOne}
             alt="about_image"
             className="md:w-48 w-36 rounded-xl mt-16"
           />
           <Image
-            src="/images/about_image_2.webp"
+            src={AboutTwo}
             alt="about_image"
             className="md:w-48 w-36 rounded-xl "
           />
           <Image
-            src="/images/about_image_3.webp"
+            src={AboutThree}
             alt="about_image"
             className="md:w-48 w-36 mt-16 rounded-xl lg:hidden md:flex hidden"
           />
@@ -26,17 +33,17 @@ export default function AboutTeams() {
         {/*second three image*/}
         <div className="flex flex-row lg:ml-[13rem] md:-ml-3 ml-[10rem] md:-mt-5">
           <Image
-            src="/images/avatar_image_4.webp"
+            src={Aboutfour}
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white"
           />
           <Image
-            src="/images/avatar_image_5.webp"
+            src={Aboutfive}
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white -ml-4"
           />
           <Image
-            src="/images/avatar_image_6.webp"
+            src={Aboutsix}
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white -ml-4"
           />
@@ -46,7 +53,7 @@ export default function AboutTeams() {
         </div>
         {/*last image*/}
         <Image
-          src="/images/about_image_3.webp"
+          src={AboutThree}
           alt="about_image"
           className="md:w-48 w-36 rounded-xl lg:flex md:hidden flex"
         />

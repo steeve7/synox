@@ -2,6 +2,8 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import Image from 'next/image';
+import HeroHand from "../../../public/Images/hero_hand_image.png";
+import HeroCard from "../../../public/Images/card.png";
 export default function HeroImage() {
   return (
     <>
@@ -20,12 +22,12 @@ export default function HeroImage() {
         className="w-1/2 relative lg:flex hidden mt-40 overflow-hidden"
       >
         <Image
-          src="/images/hero_hand_image.png"
+          src={HeroHand}
           alt="hero_hand_image"
           className="xl:w-[600px] lg:w-[450px] absolute xl:mt-[18rem] mt-[17rem] right-0 z-10"
         />
         <Image
-          src="/images/card.png"
+          src={HeroCard}
           alt="card_image"
           className="xl:w-[400px] lg:w-[300px] md:w-[320px] z-10 xl:mt-[6rem] lg:mt-[8rem] md:mt-[6rem] lg:right-[13rem] xl:right-[17rem] absolute slow-bounce"
         />

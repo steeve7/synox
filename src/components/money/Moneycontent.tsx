@@ -34,32 +34,42 @@ const monies: Money[] = [
 export default function Moneycontent() {
 
   return (
-    <div className="flex flex-row justify-center items-center rounded-2xl w-[70%]">
+    <div className="flex xl:flex-row flex-col justify-center items-center rounded-2xl w-[70%] border border-yellow-400">
       {monies.map((moni, i) => (
-        <div key={i} className="border border-yellow-400">
-          <div className="flex flex-col justify-center items-center gap-8 py-10 px-5 h-[400px]">
+          <div
+            key={i}
+            className="flex flex-col justify-center items-center gap-5 py-10 px-5 h-[400px]"
+          >
             <span className="text-white font-medium font-Euclid text-[20px]">
               {moni.number}
             </span>
-            <Image src={moni.image} alt="withdraw options" className="w-14" />
-            <p className="text-white font-bol font-Euclid text-[20px]">
+            <Image
+              src={moni.image}
+              alt="withdraw options"
+              className="w-14"
+              width="14"
+              height="10"
+            />
+            <p className="text-white font-bol font-Euclid text-[20px] text-center">
               {moni.title}
             </p>
-            <p className="text-white font-medium font-Poppins text-[13px]">
+            <p className="text-white font-medium font-Poppins text-[13px] text-center">
               {moni.desc}
             </p>
           </div>
-        </div>    
       ))}
-       <div className="flex flex-col border border-yellow-400 bg-yellow-500 py-8 px-5 h-[403px]">
+      <div className="flex flex-col py-8 px-5 h-[403px] bg-yellow-500 rounded-r-2xl">
         <div className="flex flex-col justify-center items-center text-center gap-10">
-          <h2 className="text-black font-bold font-Euclid text-[25px]">The Start of Today Begins Now</h2>
-           <p className="text-black font-medium font-Poppins text-[20px]">
-            Today marks the inception of a new journey, starting at this very moment.
+          <h2 className="text-black font-bold font-Euclid text-[25px]">
+            The Start of Today Begins Now
+          </h2>
+          <p className="text-black font-medium font-Poppins text-[20px]">
+            Today marks the inception of a new journey, starting at this very
+            moment.
           </p>
-          <Button variant='white'/>
+          <Button variant="white" />
         </div>
-        </div>
+      </div>
     </div>
   );
 }
