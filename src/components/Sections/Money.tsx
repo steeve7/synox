@@ -30,9 +30,9 @@ export default function Money() {
           duration: 1.2,
         }}
         viewport={{ once: true }}
-        className="font-Euclid font-bold xl:text-[50px] lg:text-[40px] lg:text-start text-center md:text-[60px] text-[40px] text-white"
+        className="font-Euclid font-bold xl:text-[50px] lg:text-[40px] lg:text-start text-center md:text-[60px] text-[30px] px-5 text-white"
       >
-        Take control your Money.
+        Take control of your Money.
       </motion.p>
       <Moneycontent />
     </div>
