@@ -60,7 +60,7 @@ export default function Moneycontent() {
       ))}
       <div className="flex flex-col py-8 px-5 h-[403px] bg-yellow-400 xl:rounded-r-2xl rounded-b-2xl md:rounded-br-2xl md:rounded-bl-none">
         <div className="flex flex-col justify-center items-center text-center gap-10">
-          <h2 className="text-black font-bold font-Euclid text-[25px]">
+          <h2 className="text-black font-bold font-Euclid text-[24px]">
             The Start of Today Begins Now
           </h2>
           <p className="text-black font-medium font-Poppins text-[20px]">
