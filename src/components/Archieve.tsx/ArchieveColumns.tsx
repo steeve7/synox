@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/image';
-import FunFact from "../../../public/images/funfact_bg_1.svg";
-import FunFactTwo from "../../../public/images/funfact_bg_2.svg";
-import FunFactThree from "../../../public/images/funfact_bg_3.svg";
-import FunFactFour from "../../../public/images/funfact_bg_4.svg";
+import FunFact from "../../../public/Images/funfact_bg_1.svg";
+import FunFactTwo from "../../../public/Images/funfact_bg_2.svg";
+import FunFactThree from "../../../public/Images/funfact_bg_3.svg";
+import FunFactFour from "../../../public/Images/funfact_bg_4.svg";
 import Shape from "../../../public/Images/shape_line.svg";
 import Transaction from "../../../public/Images/transactions_card_image.webp";
 
