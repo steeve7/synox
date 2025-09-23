@@ -88,10 +88,10 @@ export default function SolutionItems() {
           </p>
           <Image
             src={img}
+            width={600}
+            height={400}
             alt="solution_image"
             className={`w-[600%] ${top} ${bottom}`}
-            width="60"
-            height="10"
           />
         </div>
       ))}
