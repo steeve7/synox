@@ -4,6 +4,7 @@ import Hero from "@/components/Sections/Hero";
 import Money from "@/components/Sections/Money";
 import Solution from "@/components/Sections/Solution";
 import Testimonial from "@/components/Sections/Testimonial";
+import Wallet from "@/components/Sections/Wallet";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <About />
       <Achievement />
       <Money />
+      <Wallet />
     </div>
   )
 }
