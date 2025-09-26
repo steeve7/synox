@@ -17,7 +17,7 @@ import IntegratedTen from '../../../public/Images/integrated_logo_10.webp'
 
 export default function Wallet() {
   return (
-    <div>
+    <div className="py-20">
       <div className="flex flex-col justify-center items-center gap-5 py-20">
         <motion.h1
           initial={{ y: 50, opacity: 0 }}
