@@ -17,7 +17,11 @@ export default function MobileApp() {
       {/*Download content*/}
       <div className="flex lg:flex-row flex-col justify-center items-center gap-28 max-w-6xl">
         <div className="lg:w-1/2 w-full flex justify-center lg:order-1 order-2 -mb-10 lg:-mb-[108px]">
-          <Image src={Mobile} alt="mobile-app" className="lg:w-[550px] md:w-[750px] w-[350px]" />
+          <Image
+            src={Mobile}
+            alt="mobile-app"
+            className="lg:w-[550px] md:w-[750px] w-[350px]"
+          />
         </div>
         <div className="flex flex-col justify-center items-start gap-5 lg:w-1/2 w-full lg:order-2 order-1 md:px-20 px-10 lg:px-0">
           <motion.h1
@@ -61,7 +65,7 @@ export default function MobileApp() {
             viewport={{ once: true }}
             className="text-black font-Poppins font-medium xl:text-[18px] md:text-[15px] text-[12px] lg:w-[80%] w-full"
           >
-            Don't miss out! Download now for seamless functionalities and
+            Don&apos;t miss out! Download now for seamless functionalities and
             endless possibilities.
           </motion.p>
           <div className="flex items-center gap-4 justify-between md:mt-0 mt-5">
