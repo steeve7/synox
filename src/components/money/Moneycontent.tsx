@@ -38,7 +38,7 @@ export default function Moneycontent() {
       {monies.map((moni, i) => (
         <div
           key={i}
-          className="flex flex-col justify-center items-center gap-5 py-10 px-5 h-[400px] border-b md:border-b-0 border-yellow-400 border-r"
+          className="flex flex-col justify-center items-center gap-5 py-10 px-5 h-[400px] border-b md:border-b-0 border-yellow-400 border-r bg-[#1e1e1e]"
         >
           <span className="text-white font-medium font-Euclid text-[20px]">
             {moni.number}

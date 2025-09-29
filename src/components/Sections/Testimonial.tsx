@@ -76,7 +76,7 @@ export default function Testimonial() {
     };
 
   return (
-    <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-5 gap-20 border md:-mt-60 border-yellow-400 xl:w-[70%] md:w-[80%] lg:w-[90%] w-[90%] rounded-2xl py-10 px-10 bg-black">
+    <div className="flex lg:flex-row flex-col justify-center items-center lg:gap-5 gap-20 border md:-mt-60 border-yellow-400 xl:w-[70%] md:w-[80%] lg:w-[90%] w-[90%] rounded-2xl py-10 px-10 bg-[#1e1e1e]">
       <div className=" flex flex-col justify-start items-start lg:w-1/2 w-full gap-10">
         <motion.h1
           initial={{ y: 50, opacity: 0 }}

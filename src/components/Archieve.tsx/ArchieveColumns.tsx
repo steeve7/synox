@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image';
 import FunFact from "../../../public/Images/funfact_bg_1.svg";
@@ -6,8 +7,15 @@ import FunFactThree from "../../../public/Images/funfact_bg_3.svg";
 import FunFactFour from "../../../public/Images/funfact_bg_4.svg";
 import Shape from "../../../public/Images/shape_line.svg";
 import Transaction from "../../../public/Images/transactions_card_image.webp";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 export default function ArchieveColumns() {
+  const { ref, inView } = useInView({
+         triggerOnce: true, // only trigger once
+         threshold: 0.3, // % of component visible before triggering
+       });
+
   return (
     <>
       <div className="flex lg:flex-row flex-col justify-center items-center w-full py-10 gap-10">
@@ -22,9 +30,13 @@ export default function ArchieveColumns() {
             />
 
             {/* Content */}
-            <div className="relative flex flex-col items-start px-5">
+            <div ref={ref} className="relative flex flex-col items-start px-5">
               <h2 className="text-[#1c1c1e] xl:text-[50px] text-[35px] font-bold font-Euclid">
-                80%
+                {inView ? (
+                  <CountUp end={80} duration={3} separator="," suffix="%" />
+                ) : (
+                  "0+"
+                )}
               </h2>
               <p className="text-[#1c1c1e] text-[18px] font-medium font-Poppins">
                 Users primarily access their accounts via mobile for convenient
@@ -42,9 +54,13 @@ export default function ArchieveColumns() {
             />
 
             {/* Content */}
-            <div className="relative flex flex-col items-start px-5">
+            <div ref={ref} className="relative flex flex-col items-start px-5">
               <h2 className="text-[#1c1c1e] xl:text-[50px] text-[35px] font-bold font-Euclid">
-                300k+
+                {inView ? (
+                  <CountUp end={300} duration={3} separator="," suffix="K+" />
+                ) : (
+                  "0+"
+                )}
               </h2>
               <p className="text-[#1c1c1e] text-[18px] font-medium font-Poppins">
                 Gain access to a vast global network of over 300k+ partner ATMs
@@ -90,9 +106,13 @@ export default function ArchieveColumns() {
             />
 
             {/* Content */}
-            <div className="relative flex flex-col items-start px-5">
+            <div ref={ref} className="relative flex flex-col items-start px-5">
               <h2 className="text-[#1c1c1e] xl:text-[50px] text-[35px] font-bold font-Euclid">
-                900k+
+                {inView ? (
+                  <CountUp end={900} duration={3} separator="," suffix="K+" />
+                ) : (
+                  "0+"
+                )}
               </h2>
               <p className="text-[#1c1c1e] text-[18px] font-medium font-Poppins">
                 Wings quickly gained popularity among youth, attracting over
@@ -109,9 +129,13 @@ export default function ArchieveColumns() {
             />
 
             {/* Content */}
-            <div className="relative flex flex-col items-start px-5">
+            <div ref={ref} className="relative flex flex-col items-start px-5">
               <h2 className="text-[#1c1c1e] xl:text-[50px] text-[35px] font-bold font-Euclid">
-                60%
+                {inView ? (
+                  <CountUp end={60} duration={3} separator="," suffix="%" />
+                ) : (
+                  "0+"
+                )}
               </h2>
               <p className="text-[#1c1c1e] text-[18px] font-medium font-Poppins">
                 Users enjoy 60% faster transaction processing times compared to

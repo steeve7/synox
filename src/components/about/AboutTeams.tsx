@@ -1,3 +1,4 @@
+'use client'
 import React from 'react'
 import Image from 'next/image';
 import AboutOne from "../../../public/Images/about_image_1.webp";
@@ -6,9 +7,15 @@ import AboutThree from "../../../public/Images/about_image_3.webp";
 import Aboutfour from "../../../public/Images/avatar_image_4.webp";
 import Aboutfive from "../../../public/Images/avatar_image_5.webp";
 import Aboutsix from "../../../public/Images/avatar_image_6.webp";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 
 
 export default function AboutTeams() {
+  const { ref, inView } = useInView({
+       triggerOnce: true, // only trigger once
+       threshold: 0.3, // % of component visible before triggering
+     });
   return (
     <>
       <div className="flex flex-col lg:w-1/2 w-full justify-center items-center gap-4">
@@ -17,12 +24,12 @@ export default function AboutTeams() {
           <Image
             src={AboutOne}
             alt="about_image"
-            className="md:w-48 w-36 rounded-xl mt-16"
+            className="md:w-48 w-36 rounded-xl mt-16 slow-bounce"
           />
           <Image
             src={AboutTwo}
             alt="about_image"
-            className="md:w-48 w-36 rounded-xl "
+            className="md:w-48 w-36 rounded-xl slow-bounce"
           />
           <Image
             src={AboutThree}
@@ -47,15 +54,23 @@ export default function AboutTeams() {
             alt="avatar_image"
             className="w-12 rounded-full border-2 border-white -ml-4"
           />
-          <p className="text-white font-roboto font-bold flex justify-center items-center md:w-12 w-[3.5rem] bg-black border-2 border-white -ml-4 rounded-full h-12">
-            9k+
+          <p
+            ref={ref}
+            className="text-white font-roboto font-bold flex justify-center
+           items-center md:w-12 w-[3.5rem] bg-black border-2 border-white -ml-4 rounded-full h-12"
+          >
+            {inView ? (
+              <CountUp end={9} duration={3} suffix="K+" separator="," />
+            ) : (
+              "0+"
+            )}
           </p>
         </div>
         {/*last image*/}
         <Image
           src={AboutThree}
           alt="about_image"
-          className="md:w-48 w-36 rounded-xl lg:flex md:hidden flex"
+          className="md:w-48 w-36 rounded-xl lg:flex md:hidden flex slow-bounce"
         />
       </div>
     </>

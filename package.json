@@ -13,8 +13,10 @@
     "framer-motion": "^12.0.8",
     "next": "15.3.4",
     "react": "19.1.0",
+    "react-countup": "^6.5.3",
     "react-dom": "19.1.0",
     "react-icons": "^5.4.0",
+    "react-intersection-observer": "^9.16.0",
     "react-redux": "^9.2.0",
     "react-slick": "^0.30.3",
     "slick-carousel": "^1.8.1"
